@@ -1,0 +1,92 @@
+<main>
+    {{#with program}}
+    {{#with excursion}}
+    <div>
+        <h1>Excursion: {{name}} </h1>
+    </div>
+    {{#with location}}
+    <div>
+        <p><b>Location:</b> {{country}}, ({{city}}) </p>
+        <p><b>
+                <time>Date:
+            </b> {{../date}} </p>
+        </time>
+    </div>
+    {{/with}}
+
+    <hr>
+
+    <h2>Program</h2>
+    {{#each program}}
+    <ul>
+        <div>
+            <p>
+            <h3> {{name}} </p>
+            </h3>
+            <p><b>Type:</b> {{type}} </p>
+            <p><b>Duration:</b> {{duration}} </p>
+        </div>
+    </ul>
+
+    <ul>
+        <ul>
+            {{#with details}}
+            {{#if museum}}
+            {{#with museum}}
+            <p><b>Museum:</b> {{name}} </p>
+            {{#with location}}
+            <address><b>Location:</b> {{country}}, {{city}}, {{address}} </address>
+            {{/with}}
+            <p><b>Exhibits:</b></p>
+            {{#each exhibits}}
+            <ul>
+                <li>
+                    <b> {{name}} </b>
+                </li>
+                {{#unless artist}}
+                <b>Artist:</b> ---
+                {{else}}
+                <div><b>Artist:</b> {{artist}} </div>
+                {{/unless}}
+                <div><b>Description:</b> {{description}} </div>
+            </ul>
+            {{/each}}
+            {{/with}}
+            {{/if}}
+        </ul>
+    </ul>
+
+    <ul>
+        <ul>
+            {{#with venue}}
+            <p><b>Venue:</b> {{name}} </p>
+            {{#with location}}
+            <address><b>Location:</b> {{country}}, {{city}}, {{address}} </address>
+            {{/with}}
+            {{/with}}
+            {{#if performers }}
+            <p><b>Performers:</b></p>
+            {{/if}}
+            <ul>
+                {{#each performers}}
+                <li>
+                    <b> {{name}} </b>
+                </li>
+                <div><b>Type:</b> {{type}} </div>
+                {{/each}}
+            </ul>
+            <p><b>Guide:</b></p>
+            {{#with guide}}
+            <ul>
+                <div><b>Name:</b> {{name}} </div>
+                <div><b>Language:</b> {{language}} </div>
+                <div><b>Rating:</b> {{rating}} </div>
+            </ul>
+            {{/with}}
+            {{/with}}
+        </ul>
+    </ul>
+    {{/each}}
+    {{/with}}
+    {{/with}}
+</main>
