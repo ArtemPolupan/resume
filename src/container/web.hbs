@@ -1,0 +1,86 @@
+<main>
+    {{#with web}}
+    <h1> Languages </h1>
+    <br>
+    {{#each languages}}
+    <hr>
+    <h2>{{name}}</h2>
+    <p><b>Version:</b> {{version}} </p>
+    <p><b>Description:</b> {{description}} </p>
+
+    {{#if elements}}
+    <p><b>Elements:</b></p>
+    <ul>
+        {{#each elements}}
+        <li>
+            <p><b>"{{name}}"</b></p>
+        </li>
+        <div><b>Description:</b> {{description}} </div>
+        {{#if attributes}}
+        <div><b>Attributes:</b></div>
+        <ul>
+            {{#each attributes}}
+            <li>
+                <div><b>"{{name}}"</b></div>
+            </li>
+            <div><b>Description:</b> {{description}} </div>
+            {{/each}}
+            {{/if}}
+        </ul>
+        {{/each}}
+        {{/if}}
+    </ul>
+
+    {{#if properties}}
+    <p><b>Properties:</b></p>
+    <ul>
+        {{#each properties}}
+        <li>
+            <p><b>"{{name}}"</b></p>
+        </li>
+        <div><b>Description:</b> {{description}} </div>
+        {{#if values}}
+        <div><b>Values:</b></div>
+        <ul>
+            {{#each values}}
+            <li>
+                <div><b>"{{value}}"</b></div>
+            </li>
+            <div><b>Description:</b> {{description}} </div>
+            {{/each}}
+            {{/if}}
+        </ul>
+        {{/each}}
+        {{/if}}
+    </ul>
+
+    {{#if functions}}
+    <p><b>Functions:</b></p>
+    <ul>
+        {{#each functions}}
+        <li>
+            <p><b>"{{name}}"</b></p>
+        </li>
+        <div><b>Description:</b> {{description}} </div>
+        {{#if parameters}}
+        <div><b>Parameters:</b></div>
+        <ul>
+            {{#each parameters}}
+            <li>
+                <div><b>"{{name}}"</b></div>
+            </li>
+            <div><b>Type:</b> {{type}} </div>
+            <div><b>Description:</b> {{description}} </div>
+            {{/each}}
+            {{/if}}
+        </ul>
+        {{/each}}
+        {{/if}}
+    </ul>
+
+
+
+    {{/each}}
+    {{/with}}
+
+</main>
