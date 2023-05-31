@@ -4,9 +4,11 @@
     <br>
     <div>
         {{#with social}}
-        {{> link text=email.text href=email.href blank=true }}
-        {{> link text=phone.text href=phone.href blank=true }}
-        {{> link text=linkedin.text href=linkedin.href blank=true noLine=true}}
+        {{> uplink text=email.text href=email.href blank=true }}
+        /
+        {{> uplink text=phone.text href=phone.href blank=true }}
+        /
+        {{> uplink text=linkedin.text href=linkedin.href blank=true noLine=true}}
         {{/with}}
     </div>
     <br>
