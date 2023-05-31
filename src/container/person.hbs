@@ -75,7 +75,7 @@
                                 {{#with team_leader}}
                                 <p><b>Name:</b> {{name}}</p>
                                 <p><b>Title:</b> {{title}}</p>
-                                <p><b>Email:</b> {{> link text=email.text href=email.href blank=true noLine=true}}
+                                <p><b>Email:</b> {{> uplink text=email.text href=email.href blank=true noLine=true}}
                                 </p>
                                 {{/with}}
                             </ul>
@@ -86,7 +86,7 @@
                                 {{#each team_members}}
                                 <p><b>Name:</b> {{name}}</p>
                                 <p><b>Title:</b> {{title}}</p>
-                                <p><b>Email:</b> {{> link text=email.text href=email.href blank=true
+                                <p><b>Email:</b> {{> uplink text=email.text href=email.href blank=true
                                     noLine=true}}</p>
                                 <p><b>Skills:</b></p>
                                 <ul>
