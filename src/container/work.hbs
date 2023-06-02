@@ -14,8 +14,6 @@
                     <li>
                         <div>{{position}}</div>
 
-                        <br>
-
                         <div>
                             {{duration.from}} -
                             {{#if duration.to}}
@@ -25,8 +23,6 @@
                             {{/if}}
                         </div>
 
-                        <br>
-
                         <div>
                             {{#unless company.url}}
                             <b>{{company.name}}</b>
@@ -35,14 +31,10 @@
                             {{/unless}}
                         </div>
 
-                        <br>
-                        <br>
 
-                        <div>
+                        <div class="my-2">
                             <strong>Project ({{projectAmount}}) </strong>
                         </div>
-
-                        <br>
 
                         <ul>
                             {{#each projects}}
@@ -51,28 +43,19 @@
                                     {{> link text=name href=url blank=true noLine=true}}
                                 </div>
 
-                                <br>
-
                                 <div>
                                     <p>{{about}}</p>
                                 </div>
 
-                                <br>
-                                <br>
-
-                                <div><em>Project stacks ({{stackAmount}})</em></div>
-                                <br>
+                                <div class="my-2"><em>Project stacks ({{stackAmount}})</em></div>
                                 {{#each stacks}}
                             <li>
                                 <div>{{name}}</div>
                             </li>
                             {{/each}}
 
-                            <br>
-                            <br>
 
-                            <div><em>Project awards</em></div>
-                            <br>
+                            <div class="my-2"><em>Project awards</em></div>
                             {{#each awards}}
                             <li>
                                 <div>{{name}}</div>
@@ -86,7 +69,6 @@
 
 
                 </li>
-                <br>
                 {{/each}}
                 </ul>
             </div>
