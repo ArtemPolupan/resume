@@ -1,0 +1,121 @@
+<main>
+    <div class="card mt-3 mb-3">
+        <div class="nav">
+            {{#each navigation.links}}
+            <div class="nav-item">
+                <a href="{{href}}" class="nav-link {{#unless href}}disabled{{/unless}}">{{text}}</a>
+            </div>
+            {{/each}}
+            {{#if disabl}}
+            <div class="nav-item">
+                <a href="{{href}}" class="nav-link disabled">Disabled</a>
+            </div>
+            {{/if}}
+        </div>
+    </div>
+
+    {{#with formBlock }}
+    <div class="row">
+        <div class="col-8">
+            <h1 class="mt-5 mb-3">{{header}}</h1>
+            <div>{{rating.title}}: {{rating.value}}</div>
+            <div class="mt-5">
+                <ul class="nav nav-tabs">
+                    {{#each actionBlock.tabs}}
+                    <div class="col-4">
+                        <li class="nav-item text-center">
+                            <a class="nav-link {{#if isActive}}active{{/if}} text-centr" href="#">{{text}}</a>
+                        </li>
+                    </div>
+                    {{/each}}
+                </ul>
+            </div>
+
+            <hr class="mt-5 mb-4">
+
+            {{#with actionBlock.report}}
+            <div class="card mt-5">
+                <div class="card-body">
+                    <div class="card-title">{{title}}</div>
+                    <a href="{{button.href}}" class="btn btn-secondary">{{button.text}}</a>
+                </div>
+            </div>
+            {{/with}}
+
+            <hr class="mt-5 mb-4">
+
+            <div>
+                {{#with feedbackBlock}}
+                <h2 class="mt-5 mb-5">{{title}}</h2>
+                {{#each buttons}}
+                <a href="{{link}}" class="btn 
+                    {{#if isWarning}}btn-warning{{/if}}
+                    {{#if isSuccess}}btn-success{{/if}}
+                    {{#if isDanger}}btn-danger{{/if}} me-2">
+                    {{text}}</a>
+                {{/each}}
+                {{/with}}
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <img src="{{goodsInfo.photo}}">
+                    <h6 class="card-title mt-3">{{goodsInfo.name}}</h6>
+                </div>
+            </div>
+            <div class="card mt-3">
+                <div class="card-body">
+                    <h6>{{goodsInfo.price}}</h6>
+                    {{#if goodsInfo.inMarket}}<div>Є в наявності</div>{{/if}}
+                    {{#each goodsInfo.buttons}}
+                    <div>
+                        <a href="{{link}}" class="btn
+                            {{#if isPrimary}}btn-primary{{/if}}
+                            {{#if isSecondary}}btn-secondary{{/if}} mt-2">
+                            {{text}}
+                        </a>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            <div class="card mt-3">
+                <div class="card-body">
+                    {{goodsInfo.seller.title}}: <b>{{goodsInfo.seller.value}}</b>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/with}}
+
+    <hr class="mt-5 mb-5">
+
+    {{#each reviewList}}
+    {{> reviewItem}}
+    {{/each}}
+    <div class="card text-bg-success text-center">
+        <div class="card-body">
+            <h2>{{service.title}}</h2>
+            <p>{{service.description}}</p>
+            <div>
+                <a href="{{service.buttons.0.link}}" class="btn btn-primary">{{service.buttons.0.text}}</a>
+            </div>
+        </div>
+    </div>
+
+    <hr class="mt-5">
+
+    <div class="row mt-3">
+        {{#each footer}}
+        <div class="col-2">
+            {{#each this}}
+            <div class="nav">
+                <div class="nav-item">
+                    <a class="nav-link {{#if @last}}disabled{{/if}}" href="{{link}}">{{text}}</a>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        {{/each}}
+    </div>
+</main>
