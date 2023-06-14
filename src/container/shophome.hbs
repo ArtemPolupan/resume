@@ -109,18 +109,6 @@
     </div>
     <hr class="mt-5 mb-5">
 
-    <div class="row mt-3">
-        {{#each footer}}
-        <div class="col-2">
-            {{#each this}}
-            <div class="nav">
-                <div class="nav-item">
-                    <a class="nav-link {{#if @last}}disabled{{/if}}" href="{{link}}">{{text}}</a>
-                </div>
-            </div>
-            {{/each}}
-        </div>
-        {{/each}}
-    </div>
+    {{> footerShop}}
 
 </main>
