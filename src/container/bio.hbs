@@ -24,137 +24,169 @@
 
         <br>
         <br>
-        <hr>
+        <hr class="mt-5 mb-5">
 
-        <section>
-            <em>{{> title data="Education" big=true}}</em>
-            {{#each education}}
-            <div>
-                <p><strong>Degree:</strong> {{degree}}</p>
-                <p><strong>Field:</strong> {{field}}</p>
-                <p><strong>Institution:</strong> {{institution}}</p>
-                <p><strong>Year:</strong> {{year}}</p>
+        <div class="row mb-5">
+            <div class="col-4">
+                <div class="card text-center text-bg-secondary">
+                    <div class="card-title text-bg-dark"><em>{{> title data="Education" big=true}}</em></div>
+                    {{#each education}}
+                    <div class="card-body">
+                        <p><strong>Degree:</strong> {{degree}}</p>
+                        <p><strong>Field:</strong> {{field}}</p>
+                        <p><strong>Institution:</strong> {{institution}}</p>
+                        <p><strong>Year:</strong> {{year}}</p>
+                        {{/each}}
+                    </div>
+                </div>
             </div>
-            {{/each}}
-        </section>
 
-        <br>
-        <br>
-        <hr>
 
-        <section>
-            <em>{{> title data="Notable publications" big=true}}</em>
-            <ul>
-                {{#each notable_publications}}
-                <li><b>Title:</b> {{title}}
-                    <p><b>Year:</b> {{year}}</p>
-                    <p><b>Publisher:</b> {{publisher}}</p>
-                </li>
-                {{/each}}
-            </ul>
-        </section>
+            <div class="col-4">
+                <div class="card text-center text-bg-secondary">
+                    <div class="card-title text-bg-dark">
+                        <em>{{> title data="Notable publications" big=true}}</em>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            {{#each notable_publications}}
+                            <li><b>Title:</b> {{title}}
+                                <p><b>Year:</b> {{year}}</p>
+                                <p><b>Publisher:</b> {{publisher}}</p>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-        <br>
-        <br>
-        <hr>
 
-        <section>
-            <em>{{> title data="Partners" big=true}}</em>
-            <ul>
-                {{#each partners}}
-                <li><b>Name:</b> {{name}}
-                    <p><b>Relationship:</b> {{relationship}}</p>
-                    <p><b>Years:</b> {{years}}</p>
-                </li>
-                {{/each}}
-            </ul>
-        </section>
+            <div class="col-4">
+                <div class="card text-center text-bg-secondary">
+                    <div class="card-title text-bg-dark">
+                        <em>{{> title data="Partners" big=true}}</em>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            {{#each partners}}
+                            <li><b>Name:</b> {{name}}
+                                <p><b>Relationship:</b> {{relationship}}</p>
+                                <p><b>Years:</b> {{years}}</p>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <br>
-        <br>
-        <hr>
 
-        <section>
-            <em>{{> title data="Awards" big=true}}</em>
-            {{#each awards}}
-            <p><strong>Title:</strong> {{title}}</p>
-            <p><strong>Year:</strong> {{year}}</p>
-            <p><strong>Description:</strong> {{description}}</p>
-            {{/each}}
-        </section>
+        <hr class="mt-5 mb-5">
 
-        <br>
-        <br>
-        <hr>
+        <div class="row">
+            <div class="col-4">
+                <div class="card text-center text-bg-success">
+                    <div class="card-title text-bg-dark">
+                        <em>{{> title data="Awards" big=true}}</em>
+                    </div>
+                    <div class="card-body">
+                        {{#each awards}}
+                        <p><strong>Title:</strong> {{title}}</p>
+                        <p><strong>Year:</strong> {{year}}</p>
+                        <p><strong>Description:</strong> {{description}}</p>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
 
-        <section>
-            <em>{{> title data="Influences" big=true}}</em>
-            <ul>
-                {{#each influences}}
-                <li>
-                    <p> {{name}}</p>
-                </li>
-                {{/each}}
-            </ul>
-        </section>
+            <div class="col-4">
+                <div class="card card text-center text-bg-success">
+                    <div class="card-title text-bg-dark">
+                        <em>{{> title data="Influences" big=true}}</em>
+                    </div>
+                    <div class="card-title">
+                        <ul>
+                            {{#each influences}}
+                            <li>
+                                <p> {{name}}</p>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-        <br>
-        <br>
-        <hr>
 
-        <section>
-            <em>{{> title data="Influenced" big=true}}</em>
-            <ul>
-                {{#each influenced}}
-                <li>
-                    <p> {{name}}</p>
-                </li>
-                {{/each}}
-            </ul>
-        </section>
+            <div class="col-4">
+                <div class="card text-center text-bg-success">
+                    <div class="card-title text-bg-dark">
+                        <em>{{> title data="Influenced" big=true}}</em>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            {{#each influenced}}
+                            <li>
+                                <p> {{name}}</p>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <br>
-        <br>
-        <hr>
+        <hr class="mt-5 mb-5">
 
-        <section>
-            <em>{{> title data="Quotes" big=true}}</em>
-            <ul>
-                {{#each quotes}}
-                <li>
-                    <q> {{text}}</q>
-                </li>
-                {{/each}}
-            </ul>
-        </section>
+        <div class="row">
+            <div class="col-4">
+                <div class="card text-center text-bg-warning">
+                    <div class="card-title text-bg-dark">
+                        <em>{{> title data="Quotes" big=true}}</em>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            {{#each quotes}}
+                            <li>
+                                <q> {{text}}</q>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-        <br>
-        <br>
-        <hr>
+            <div class="col-4">
+                <div class="card text-center text-bg-warning">
+                    <div class="card-title text-bg-dark">
+                        <em>{{> title data="Major discoveries" big=true}}</em>
+                    </div>
+                    <div class="card-body">
+                        {{#each major_discoveries}}
+                        <p><strong>Title:</strong> {{title}}</p>
+                        <p><strong>Year:</strong> {{year}}</p>
+                        <p><strong>Description:</strong> {{description}}</p>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
 
-        <section>
-            <em>{{> title data="Major discoveries" big=true}}</em>
-            {{#each major_discoveries}}
-            <p><strong>Title:</strong> {{title}}</p>
-            <p><strong>Year:</strong> {{year}}</p>
-            <p><strong>Description:</strong> {{description}}</p>
-            {{/each}}
-        </section>
 
-        <br>
-        <br>
-        <hr>
-
-        <section>
-            <em>{{> title data="Contributions" big=true}}</em>
-            {{#with contributions}}
-            <p><strong>Title:</strong> {{title}}</p>
-            <p><strong>Description:</strong> {{description}}</p>
-            <p><strong>Year:</strong> {{year}}</p>
-            <p><strong>Field:</strong> {{field}}</p>
-
-            {{/with}}
-        </section>
+            <div class="col-4">
+                <div class="card text-center text-bg-warning">
+                    <div class="card-title text-bg-dark">
+                        <em>{{> title data="Contributions" big=true}}</em>
+                    </div>
+                    <div class="card-body">
+                        {{#with contributions}}
+                        <p><strong>Title:</strong> {{title}}</p>
+                        <p><strong>Description:</strong> {{description}}</p>
+                        <p><strong>Year:</strong> {{year}}</p>
+                        <p><strong>Field:</strong> {{field}}</p>
+                        {{/with}}
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </main>
 </div>

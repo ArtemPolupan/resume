@@ -368,7 +368,7 @@ router.get('/person', function (req, res) {
 router.get('/bio', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('bio', {
-    layout: 'basic',
+    layout: 'bootstrap',
 
     name: 'Albert Einstein',
     birthdate: 'March 14, 1879',
@@ -3479,6 +3479,15 @@ router.get('/shopreview', function (req, res) {
 })
 
 // ================================================================
+
+router.get('/index', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('index', {
+    layout: 'index',
+  })
+})
 
 // Підключаємо роутер до бек-енду
 module.exports = router
